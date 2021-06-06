@@ -136,6 +136,9 @@
     <Prefer32Bit>true</Prefer32Bit>
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(IsStoreBuild)' == 'True'">
+    <DefineConstants>$(DefineConstants);SEND_DIAGNOSTICS;IS_STORE_BUILD</DefineConstants>
+  </PropertyGroup>
   <PropertyGroup>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
@@ -557,7 +560,6 @@
     <Content Include="Assets\Standard.targetsize-32_contrast-white.png" />
     <Content Include="Assets\Standard.targetsize-64_contrast-black.png" />
     <Content Include="Assets\Standard.targetsize-64_contrast-white.png" />
-    <Content Include="Calculator.rc" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
