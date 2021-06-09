@@ -52,7 +52,7 @@ jobs:
       #   - clrcompression.dll
       Content: |
         **\*
-        !**\clrcompression.dll
+        !clrcompression.dll
       TargetFolder: '$(Agent.BuildDirectory)\binskim'
       CleanTargetFolder: true
       OverWrite: true
