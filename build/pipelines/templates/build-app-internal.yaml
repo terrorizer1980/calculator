@@ -47,6 +47,7 @@ jobs:
     inputs:
       inputType: Basic
       analyzeTarget: $(Build.BinariesDirectory)\$(BuildConfiguration)\$(BuildPlatform)\Calculator\*
+      AnalyzeSymPath: 'srv*http://symweb;srv*$(Build.BinariesDirectory)'
       analyzeVerbose: true
       analyzeHashes: true
     continueOnError: true
