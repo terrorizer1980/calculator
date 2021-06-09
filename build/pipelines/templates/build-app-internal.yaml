@@ -48,12 +48,15 @@ jobs:
       SourceFolder: '$(Build.BinariesDirectory)\$(BuildConfiguration)\$(BuildPlatform)\Calculator\'
       # Setting up a folder to store all the binary files that we need BinSkim to scan.
       # If we put more things than we produce pdbs for and can index (such as nuget packages that ship without pdbs), binskim will fail.
+      # Below are(is) ignored file(s)
+      #   - clrcompression.dll
       Content: |
         **\*
+        !**\clrcompression.dll
       TargetFolder: '$(Agent.BuildDirectory)\binskim'
       CleanTargetFolder: true
       OverWrite: true
-      flattenFolders: true
+      flattenFolders: false
 
   - task: securedevelopmentteam.vss-secure-development-tools.build-task-binskim.BinSkim@3
     displayName: Run BinSkim
